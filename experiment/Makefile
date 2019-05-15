@@ -1,14 +1,14 @@
 build:
-	/home/moly/llvm-project/build/bin/clang hello.c -o hello
+	${LLVMBIN}/clang hello.c -o hello
 
 bitcode:
-	/home/moly/llvm-project/build/bin/clang -O3 -emit-llvm hello.c -c -o hello.bc
+	${LLVMBIN}//clang -O3 -emit-llvm hello.c -c -o hello.bc
 
 clean:
 	rm hello hello.bc
 
 run: bitcode
-	/home/moly/llvm-project/build/bin/opt -load ../build/Hyper/libLLVMHyper.so -hyper < hello.bc > /dev/null
+	${LLVMBIN}//opt -load ../build/Hyper/libLLVMHyper.so -hyper -time-passes < hello.bc > /dev/null
 
 help:
-	/home/moly/llvm-project/build/bin/opt -load ../build/Hyper/libLLVMHyper.so -help | grep hyper
+	${LLVMBIN}//opt -load ../build/Hyper/libLLVMHyper.so -help | grep hyper

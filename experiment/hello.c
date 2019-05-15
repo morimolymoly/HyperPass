@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-int main() {
+void test()
+{
+  printf("testtesttest\n");
+}
+
+int main()
+{
   printf("hello world\n");
+  test();
   return 0;
 }
