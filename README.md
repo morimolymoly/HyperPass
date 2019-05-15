@@ -1,6 +1,6 @@
 # build pass
 ```
 mkdir build && cd build
-cmake ../
+cmake -D LLVM_DIR=/home/moly/llvm-project/build/cmake/modules/CMakeFiles ../
 make
 ```
